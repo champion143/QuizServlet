@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+#clock{
+width:600px;
+text-align:center;
+font-size:150px;
+margin:100px;
+}
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<form name="myform" style="text-align:center;" action="check3" method="post">
+Q1. Keyboard is which type of device ?<br>
+<input type="radio" name="q5" value="a">Input</br>
+<input type="radio" name="q5" value="b">Output</br>          
+<hr>
+Q2. In CPU, c stands for ?<br>
+<input type="radio" name="q6" value="a">Communication</br>
+<input type="radio" name="q6" value="b">Central</br>
+<hr>
+<input type="submit" value="Sumbit">
+</form>
+<script>
+setInterval(displayclock,500);
+function displayclock()
+{
+var time = new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var sec = time.getSeconds();
+var i = "PM" ;
+if(hrs > 12)
+{
+hrs = hrs-12;
+}
+if(hrs == 0)
+{
+hrs = 12;
+}
+if(hrs<10)
+{
+   hrs = '0' + hrs;
+}
+if(min<10)
+{
+   min = '0' + min;
+}
+if(sec<10)
+{
+   sec = '0' + sec;
+}
+if(hrs > 12)
+{
+i = "AM" ;
+}
+document.getElementById("clock").innerHTML = hrs + ":" + min + ":" + sec + i;
+}
+</script>
+</body>
+
+</html>

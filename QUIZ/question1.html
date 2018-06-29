@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+#clock{
+width:600px;
+text-align:center;
+font-size:150px;
+margin:100px;
+}
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<form name="myform" style="text-align:center;" action="check" method="post">
+Q1. What is the capital of India?<br>
+<input type="radio" name="q1" value="a">Delhi</br>
+<input type="radio" name="q1" value="b">mumbai</br>          
+<hr>
+Q2. Who is the CEO of Facebook?<br>
+<input type="radio" name="q2" value="a">Steve Jobs</br>
+<input type="radio" name="q2" value="b">Mark Zuckerburg</br>
+<hr>
+<input type="submit" value="Sumbit">
+</form>
+<script>
+setInterval(displayclock,500);
+function displayclock()
+{
+var time = new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var sec = time.getSeconds();
+var i = "PM" ;
+if(hrs > 12)
+{
+hrs = hrs-12;
+}
+if(hrs == 0)
+{
+hrs = 12;
+}
+if(hrs<10)
+{
+   hrs = '0' + hrs;
+}
+if(min<10)
+{
+   min = '0' + min;
+}
+if(sec<10)
+{
+   sec = '0' + sec;
+}
+if(hrs > 12)
+{
+i = "AM" ;
+}
+document.getElementById("clock").innerHTML = hrs + ":" + min + ":" + sec + i;
+}
+</script>
+
+</body>
+</html>

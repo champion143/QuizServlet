@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+#clock{
+width:600px;
+text-align:center;
+font-size:150px;
+margin:100px;
+}
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<form name="myform" style="text-align:center;" action="check4" method="post">
+Q1. What is the PM of India?<br>
+<input type="radio" name="q7" value="a">Narendra Modi</br>
+<input type="radio" name="q7" value="b">Rahul</br>          
+<hr>
+Q2. Which memory is versatile ?<br>
+<input type="radio" name="q8" value="a">RAM</br>
+<input type="radio" name="q8" value="b">ROM</br>
+<hr>
+<input type="submit" value="Sumbit">
+</form>
+<script>
+setInterval(displayclock,500);
+function displayclock()
+{
+var time = new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var sec = time.getSeconds();
+var i = "PM" ;
+if(hrs > 12)
+{
+hrs = hrs-12;
+}
+if(hrs == 0)
+{
+hrs = 12;
+}
+if(hrs<10)
+{
+   hrs = '0' + hrs;
+}
+if(min<10)
+{
+   min = '0' + min;
+}
+if(sec<10)
+{
+   sec = '0' + sec;
+}
+if(hrs > 12)
+{
+i = "AM" ;
+}
+document.getElementById("clock").innerHTML = hrs + ":" + min + ":" + sec + i;
+}
+</script>
+</body>
+</html>
